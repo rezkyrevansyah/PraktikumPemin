@@ -34,18 +34,16 @@ https://nodejs.org/en
 ![](../Screenshot_3/1.png) <br>
 2. Download dan jalankan node setup <br><br>
 ![](../Screenshot_3/2.png) <br> 
-![](../Screenshot_3/3.png) <br>
-![](../Screenshot_3/4.png) <br>
 3. Setelah instalasi selesai jalankan command ```node -v``` untuk memeriksa apakah NodeJS sudah terinstall <br><br>
-![](../Screenshot_3/5.png) <br>
+![](../Screenshot_3/3.png) <br>
 
 ## Inisiasi project Express dan pemasangan package
 1. Lakukan pembuatan folder dengan nama express-mongodb dan masuk ke dalam folder tersebut lalu buka melalui text editor masing-masing. <br><br>
-![](../Screenshot_3/6.png) <br>
+![](../Screenshot_3/4.png) <br>
 2. Lakukan npm init untuk mengenerate file package.json dengan menggunakan command ```npm init -y```. <br><br>
-![](../Screenshot_3/7.png) <br>
+![](../Screenshot_3/5.png) <br>
 3. Lakukan instalasi express, mongoose, dan dotenv dengan menggunakan command ```npm i express mongoose dotenv```. <br><br>
-![](../Screenshot_3/8.png) <br>
+![](../Screenshot_3/6.png) <br>
 
 ## Koneksi Express ke MongoDB
 1. Buatlah file index.js pada root folder dan masukkan kode di bawah ini. <br>
@@ -66,15 +64,15 @@ https://nodejs.org/en
    })
    ```
     <br><br>
-   ![](../Screenshot_3/9.png) <br>
+   ![](../Screenshot_3/7.png) <br>
    Setelah itu coba jalankan aplikasi dengan command ```node index.js```<br><br>
-   ![](../Screenshot_3/10.png) <br>
+   ![](../Screenshot_3/8.png) <br>
 2. Lakukan pembuatan file **.env** dan masukkan baris berikut : <br>
    ```
    PORT = 5000
    ```
    <br><br>
-   ![](../Screenshot_3/11.png) <br><br>
+   ![](../Screenshot_3/9.png) <br><br>
    Setelah itu ubahlah kode pada listening port menjadi berikut dan coba jalankan aplikasi kembali <br>
    ```
    ...
@@ -84,13 +82,13 @@ https://nodejs.org/en
    })
    ```
    <br><br>
-   ![](../Screenshot_3/12.png) <br><br>
+   ![](../Screenshot_3/10.png) <br><br>
 4. Copy connection string yang terdapat pada compas atau atlas dan paste kan pada **.env** seperti berikut : <br>
    ```
    MONGO_URI=<Connection string masing-masing>
    ```
    <br><br>
-   ![](../Screenshot_3/13.png) <br><br>
+   ![](../Screenshot_3/11.png) <br><br>
 6. Tambahkan baris kode berikut pada file index.js <br>
    ```
    require('dotenv').config();
@@ -107,15 +105,15 @@ https://nodejs.org/en
    ...
    ```
    <br><br>
-   ![](../Screenshot_3/14.png) <br><br>
+   ![](../Screenshot_3/12.png) <br><br>
    Setelah itu coba jalankan aplikasi kembali <br><br>
-   ![](../Screenshot_3/15.png) <br>
+   ![](../Screenshot_3/13.png) <br>
 
 ## Pembuatan routing 
 1. Lakukan pembuatan direktori routes di tingkat yang sama dengan index.js. <br><br>
-![](../Screenshot_3/16.png) <br><br>
+![](../Screenshot_3/14.png) <br><br>
 2. Buatlah file book.route.js di dalamnya<br><br>
-![](../Screenshot_3/17.png) <br><br>
+![](../Screenshot_3/15.png) <br><br>
 3. Tambahkan baris kode berikut untuk fungsi getAllBooks <br>
 ```
 const router = require('express').Router();
@@ -127,7 +125,7 @@ message: 'mendapatkan semua buku'
 module.exports = router;
 ```
 <br><br>
-![](../Screenshot_3/18.png) <br><br>
+![](../Screenshot_3/16.png) <br><br>
 4. Lakukan hal yang sama untuk getOneBook, createBook, updateBook, dan deleteBook <br>
 ```
 const router = require('express').Router();
@@ -162,7 +160,7 @@ id,
 module.exports = router;
 ```
 <br><br>
-![](../Screenshot_3/19.png) <br><br>
+![](../Screenshot_3/17.png) <br><br>
 5. Lakukan import book.route.js pada file index.js dan tambahkan baris kode berikut : <br>
 ```
 require('dotenv').config();
@@ -182,15 +180,15 @@ console.log(`Running on port ${PORT}`);
 })
 ```
 <br><br>
-![](../Screenshot_3/20.png) <br><br>
+![](../Screenshot_3/18.png) <br><br>
 6. Uji salah satu endpoint dengan Postman<br><br>
-![](../Screenshot_3/21.png) <br><br>
+![](../Screenshot_3/19.png) <br><br>
 
 ## Pembuatan controller
 1. Lakukan pembuatan direktori controllers di tingkat yang sama dengan index.js. <br><br>
-![](../Screenshot_3/22.png) <br><br>
+![](../Screenshot_3/20.png) <br><br>
 2. Buatlah file book.controller.js di dalamnya <br><br>
-![](../Screenshot_3/23.png) <br><br>
+![](../Screenshot_3/21.png) <br><br>
 3. Salin baris kode dari routes untuk fungsi getAllBooks <br> 
 ```
 function getAllBooks(req, res) {
@@ -203,7 +201,7 @@ getAllBooks,
 }
 ```
 <br><br>
-![](../Screenshot_3/24.png) <br><br>
+![](../Screenshot_3/22.png) <br><br>
 4. Lakukan hal yang sama untuk getOneBook, createBook, updateBook, dan deleteBook <br>
 ```
 ...
@@ -242,7 +240,7 @@ deleteBook //
 }
 ```
 <br><br>
-![](../Screenshot_3/25.png) <br><br>
+![](../Screenshot_3/23.png) <br><br>
 5. Lakukan import book.controller.js pada file book.route.js <br>
 ```
 const router = require('express').Router();
@@ -251,7 +249,7 @@ const book = require('../controllers/book.controller'); //
 module.exports = router;
 ```
 <br><br>
-![](../Screenshot_3/26.png) <br><br>
+![](../Screenshot_3/25.png) <br><br>
 6. Lakukan perubahan pada fungsi agar dapat memanggil fungsi dari book.controller.js <br>
 ```
 const router = require('express').Router();
@@ -264,9 +262,9 @@ router.delete('/:id', book.deleteBook);
 module.exports = router;
 ```
 <br><br>
-![](../Screenshot_3/27.png) <br><br>
+![](../Screenshot_3/26.png) <br><br>
 7. Lakukan pengujian kembali, pastikan response tetap sama <br>
-![](../Screenshot_3/28.png) <br><br>
+![](../Screenshot_3/27.png) <br><br>
 
 ## Pembuatan model
 Berikut adalah gambaran bentuk data dari modul sebelumnya <br>
@@ -299,9 +297,9 @@ Berikut adalah gambaran bentuk data dari modul sebelumnya <br>
  </table>
 
  1. Lakukan pembuatan direktori models di tingkat yang sama dengan index.js <br><br>
-![](../Screenshot_3/29.png) <br><br>
+![](../Screenshot_3/28.png) <br><br>
  2. Buatlah file book.model.js di dalamnya <br><br>
-![](../Screenshot_3/30.png) <br><br>
+![](../Screenshot_3/29.png) <br><br>
  3. Tambahkan baris kode berikut sesuai dengan tabel di atas <br>
 ```
 const mongoose = require('mongoose');
@@ -328,18 +326,18 @@ type: String
 module.exports = mongoose.model('book', bookSchema);
 ```
 <br><br>
-![](../Screenshot_3/31.png) <br><br>
+![](../Screenshot_3/30.png) <br><br>
 
 ## Operasi CRUD 
 1. Hapus semua data pada collection books <br><br>
-![](../Screenshot_3/32.png) <br><br>
+![](../Screenshot_3/31.png) <br><br>
 2. Lakukan import book.model.js pada file book.controller.js <br>
 ```
 const Book = require('../models/book.model');
 ...
 ```
 <br><br>
-![](../Screenshot_3/33.png) <br><br>
+![](../Screenshot_3/32.png) <br><br>
 3. Lakukan perubahan pada fungsi createBook <br>
 ```
 const Book = require('../models/book.model');
@@ -370,7 +368,7 @@ error: error.message,
 ...
 ```
 <br><br>
-![](../Screenshot_3/34.png) <br><br>
+![](../Screenshot_3/33.png) <br><br>
 4. Buatlah dua buah buku dengan data di bawah ini dengan Postman <br>
 ```
 {
@@ -394,8 +392,8 @@ error: error.message,
 }
 ```
 <br><br>
+![](../Screenshot_3/34.png) <br><br>
 ![](../Screenshot_3/35.png) <br><br>
-![](../Screenshot_3/36.png) <br><br>
 6. Lakukan perubahan pada fungsi getAllBooks <br>
 ```
    const Book = require('../models/book.model');
@@ -417,7 +415,7 @@ error: error.message,
 ...
 ```
 <br><br>
-![](../Screenshot_3/37.png) <br><br>
+![](../Screenshot_3/36.png) <br><br>
 6. Lakukan perubahan pada fungsi getOneBook <br>
 ```
    const Book = require('../models/book.model');
@@ -440,11 +438,11 @@ error: error.message,
 ...
 ```
 <br><br>
-![](../Screenshot_3/38.png) <br><br>
+![](../Screenshot_3/37.png) <br><br>
 7. Tampilkan semua buku dengan Postman <br><br>
-![](../Screenshot_3/39.png) <br><br>
+![](../Screenshot_3/38.png) <br><br>
 8. Tampilkan buku Dilan 1990 dengan Postman <br><br>
-![](../Screenshot_3/40.png) <br><br>
+![](../Screenshot_3/39.png) <br><br>
 9. Lakukan perubahan pada fungsi updateBook <br>
 ```
 const Book = require('../models/book.model');
@@ -469,9 +467,9 @@ error: error.message,
 ...
 ```
 <br><br>
-![](../Screenshot_3/41.png) <br><br>
+![](../Screenshot_3/40.png) <br><br>
 10. Ubah judul buku Dilan 1991 menjadi “NAMA PANGGILAN 1991” dengan Postman <br><br>
-![](../Screenshot_3/42.png) <br><br>
+![](../Screenshot_3/41.png) <br><br>
 11. Lakukan perubahan pada fungsi deleteBook <br>
 ```
 const Book = require('../models/book.model');
@@ -493,7 +491,6 @@ error: error.message,
 }
 ...
 ```
-![](../Screenshot_3/43.png) <br><br>
+![](../Screenshot_3/42.png) <br><br>
 13. Hapus buku Dilan 1990 dengan Postman.<br><br>
-![](../Screenshot_3/44.png) <br><br>
-![](../Screenshot_3/45.png) <br><br>
+![](../Screenshot_3/43.png) <br><br>
