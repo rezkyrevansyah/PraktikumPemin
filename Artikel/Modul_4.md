@@ -54,15 +54,16 @@ Setelah selesai menambahkan route untuk method POST, PUT, PATCH, DELETE, dan OPT
 - Setelah itu kita dapat memasukkan method dan url yang dituju <br><br>
 ![](../Screenshot_4/8.png) <br><br>
 - Akses url yang baru saja ditambahkan pada aplikasi dengan methodnya <br><br>
-![](../Screenshot_4/8_1.png) <br><br>
-![](../Screenshot_4/8_2.png) <br><br>
-![](../Screenshot_4/8_3.png) <br><br>
-![](../Screenshot_4/8_4).png) <br><br>
-![](../Screenshot_4/8_5.png) <br><br>
-![](../Screenshot_4/8_6.png) <br><br>
+![](../Screenshot_4/9.png) <br><br>
+![](../Screenshot_4/10.png) <br><br>
+![](../Screenshot_4/11.png) <br><br>
+![](../Screenshot_4/12.png) <br><br>
+![](../Screenshot_4/13.png) <br><br>
+- Penampakan CMD akan seperti ini <br><br>
+![](../Screenshot_4/22.png) <br><br>
 3. Migrasi Database <br><br>
    -  Sebelum melakukan migrasi database pastikan server database aktif kemudian pastikan sudah membuat database dengan nama ```lumenapi```
-   ![](../Screenshot_4/9.png) <br><br>
+   ![](../Screenshot_4/14.png) <br><br>
    -  Kemudian ubah konfigurasi database pada file .env menjadi seperti ini
       ```
       DB_CONNECTION=mysql
@@ -73,7 +74,7 @@ Setelah selesai menambahkan route untuk method POST, PUT, PATCH, DELETE, dan OPT
       DB_PASSWORD=<<password masing-masing>>
       ```
       <br>
-     ![](../Screenshot_4/10.png) <br><br>
+     ![](../Screenshot_4/15.png) <br><br>
    -  Setelah mengubah konfigurasi pada file .env, kita juga perlu menghidupkan beberapa library bawaan dari lumen dengan membuka file app.php pada folder bootstrap dan mengubah baris ini :
       ```
       //$app->withFacades();
@@ -84,13 +85,13 @@ Setelah selesai menambahkan route untuk method POST, PUT, PATCH, DELETE, dan OPT
       $app->withFacades();
       $app->withEloquent();
       ```
-     ![](../Screenshot_4/11.png) <br><br>
+     ![](../Screenshot_4/16.png) <br><br>
     - Setelah itu jalankan command berikut untuk membuat file migration :
       ```
       php artisan make:migration create_users_table # membuat migrasi untuk tabel users
       php artisan make:migration create_products_table # membuat migrasi untuk tabel products
       ```
-     ![](../Screenshot_4/13.png) <br><br>
+     ![](../Screenshot_4/17.png) <br><br>
     - Ubah fungsi up pada file migrasi ```create_users_table```
       ```
       # sebelumnya
@@ -117,7 +118,7 @@ Setelah selesai menambahkan route untuk method POST, PUT, PATCH, DELETE, dan OPT
       }
       ...
       ```
-    ![](../Screenshot_4/13.png) <br><br>
+    ![](../Screenshot_4/18.png) <br><br>
     - Ubah fungsi up pada file migrasi ```create_products_table```
       ```
       # sebelumnya
@@ -147,11 +148,11 @@ Setelah selesai menambahkan route untuk method POST, PUT, PATCH, DELETE, dan OPT
       }
       ...
       ```
-    ![](../Screenshot_4/14.png) <br><br>
+    ![](../Screenshot_4/19.png) <br><br>
     - Kemudian jalankan command :
       ```
       php artisan migrate
       ```
-    ![](../Screenshot_4/15.png) <br><br>
-    ![](../Screenshot_4/16.png) <br><br>
+    ![](../Screenshot_4/20.png) <br><br>
+    ![](../Screenshot_4/21.png) <br><br>
     
